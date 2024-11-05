@@ -10,7 +10,7 @@ export class GithubService {
   
   private api = axios.create({
     baseURL: environment.githubApiUrl,
-    headers: { Authorization: `Bearer ${environment.apiKey}` },
+    headers: { Authorization: `Bearer ${environment.githubToken}` },
   });
 
   // Fetch trending projects
