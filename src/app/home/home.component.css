@@ -1,0 +1,51 @@
+.scrolling-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scrolling-wrapper {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    gap: 1.5rem;
+  }
+  
+  /* Double the content for seamless scrolling */
+  .scrolling-wrapper:hover {
+    animation-play-state: paused;
+  }
+  
+  .project-card {
+    flex: 0 0 auto;
+    width: 350px; /* Fixed width for each card */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-350px * 6)); /* Adjust based on number of cards */
+    }
+  }
+  
+  /* Optional gradient masks for smooth edges */
+  .scrolling-container::before,
+  .scrolling-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    z-index: 2;
+  }
+  
+  .scrolling-container::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+  }
+  
+  .scrolling-container::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+  }
