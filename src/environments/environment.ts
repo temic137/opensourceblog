@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    githubToken: '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',
+    githubToken: '',
     githubApiUrl: 'https://api.github.com',
   };
   
